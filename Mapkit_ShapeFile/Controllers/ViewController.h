@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GeoRegionStack.h"
+#import "GeoRegion.h"
+#import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MKMapViewDelegate>
 
 @end
