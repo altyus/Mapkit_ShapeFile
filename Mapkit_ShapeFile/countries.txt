@@ -1,0 +1,9 @@
+World Country Admin Boundary Shapefile with FIPS Codes
+
+This dataset displays country administrative boundaries across the world. The data includes both the country name and the 2-digit FIPS code for each country.
+
+Attributes:
+FIPS_CNTRY: Fips Cntry - 
+CNTRY_NAME: Cntry Name - 
+
+exported on Tue Nov 06 08:13:28 -0500 2012
