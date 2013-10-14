@@ -252,6 +252,7 @@
 				444A3921180B23F8006A6A13 /* countries.txt */,
 			);
 			name = Countries;
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		444A3926180B2436006A6A13 /* States */ = {
@@ -266,6 +267,7 @@
 				444A392D180B2443006A6A13 /* states.prj */,
 			);
 			name = States;
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		444A3935180B52B6006A6A13 /* National Parks and Protected Lands  */ = {
@@ -276,6 +278,7 @@
 				444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */,
 			);
 			name = "National Parks and Protected Lands ";
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
