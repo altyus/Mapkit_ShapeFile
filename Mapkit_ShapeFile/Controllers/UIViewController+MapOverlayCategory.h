@@ -13,7 +13,6 @@
 
 @interface UIViewController (MapOverlayCategory)
 
-
 -(void)drawOverlaysWithGeoRegionStack:(GeoRegionStack *)stack onMapView:(MKMapView *)mapView;
 - (UIColor *)randomColor;
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay;

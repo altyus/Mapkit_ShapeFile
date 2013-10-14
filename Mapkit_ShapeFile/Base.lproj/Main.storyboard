@@ -27,11 +27,12 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zpR-gL-imy"/>
                                     <barButtonItem style="plain" id="CN5-7g-IM4">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="lsl-hX-Clx">
-                                            <rect key="frame" x="97" y="8" width="125" height="29"/>
+                                            <rect key="frame" x="33" y="7" width="254" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
-                                                <segment title="Country"/>
-                                                <segment title="State"/>
+                                                <segment title="Countries"/>
+                                                <segment title="US States"/>
+                                                <segment title="State Parks"/>
                                             </segments>
                                             <connections>
                                                 <action selector="overlayTypeValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Afc-BH-LOY"/>

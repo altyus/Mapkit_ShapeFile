@@ -33,7 +33,7 @@
     }
 }
 
-#define ALPHAVALUE  .60f
+#define ALPHAVALUE  1.0f
 - (UIColor *)randomColor
 {
     CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
