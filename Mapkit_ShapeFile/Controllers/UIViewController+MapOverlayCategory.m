@@ -28,6 +28,7 @@
             }
             MKPolygon *polygon = [MKPolygon polygonWithCoordinates:coords count:count];
             polygon.title = region.name;
+            polygon.subtitle = region.color;
             [mapView addOverlay:polygon];
         }
     }
@@ -53,7 +54,15 @@
     {
         //set fillColor to region.color if you want to use a uniform color for all regions
         //renderer.fillColor = region.color;
-        renderer.fillColor = [self randomColor];
+        NSString *colorString = [(MKPolygon *)overlay subtitle];
+        SEL colorSel = NSSelectorFromString(colorString);
+        UIColor* fillColor = nil;
+        if ([UIColor respondsToSelector: colorSel])
+        {
+            fillColor  = [UIColor performSelector:colorSel];
+        }
+        
+        renderer.fillColor = fillColor;
         renderer.strokeColor = [UIColor blackColor];
         renderer.lineWidth = 1;
         renderer.lineCap = kCGLineCapRound;

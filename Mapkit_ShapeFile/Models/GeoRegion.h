@@ -14,14 +14,14 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray *polygons;
-@property (nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) NSString *color;
 
 @property (nonatomic, assign) double minLat;
 @property (nonatomic, assign) double maxLat;
 @property (nonatomic, assign) double minLong;
 @property (nonatomic, assign) double maxLong;
 
--(id)initWithShapeObject:(SHPObject *)shape databaseFilePath:(NSString *)dbfPath fieldName:(NSString *)fieldName color:(UIColor *)color;
+-(id)initWithShapeObject:(SHPObject *)shape databaseFilePath:(NSString *)dbfPath fieldName:(NSString *)fieldName colorString:(NSString *)colorString;
 
 @end
 

@@ -14,7 +14,7 @@
 
 #pragma mark - Initializers
 
--(id)initWithShapeObject:(SHPObject *)shape databaseFilePath:(NSString *)dbfPath fieldName:(NSString *)fieldName color:(UIColor *)color
+-(id)initWithShapeObject:(SHPObject *)shape databaseFilePath:(NSString *)dbfPath fieldName:(NSString *)fieldName colorString:(NSString *)colorString
 {
     self = [super init];
     if (self)
@@ -27,7 +27,7 @@
         _minLong = shape->dfXMin;
         _maxLong = shape->dfXMax;
         
-        _color = color;
+        _color = colorString;
         
         //Build Array of Polygons for shape 
         NSMutableArray *polygons = [NSMutableArray arrayWithCapacity:numParts];

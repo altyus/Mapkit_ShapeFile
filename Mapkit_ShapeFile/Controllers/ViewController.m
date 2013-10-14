@@ -26,7 +26,7 @@
     //Load initial MapOverlays
     GeoRegionStack *countryRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
                                                                          withFieldName:@"CNTRY_NAME"
-                                                                    withColorForRegion:[UIColor purpleColor]];
+                                                              withColorStringForRegion:@"yellowColor"];
     [self drawOverlaysWithGeoRegionStack:countryRegionStack onMapView:self.mapView];
 }
 
@@ -41,19 +41,19 @@
         {
             GeoRegionStack *countryRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
                                                                                  withFieldName:@"CNTRY_NAME"
-                                                                            withColorForRegion:[UIColor purpleColor]];
+                                                                      withColorStringForRegion:@"yellowColor"];
             [self drawOverlaysWithGeoRegionStack:countryRegionStack onMapView:self.mapView];
         }
         else if (control.selectedSegmentIndex == 1)
         {
             GeoRegionStack *stateRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"states"
                                                                                withFieldName:@"STATE_NAME"
-                                                                          withColorForRegion:[UIColor greenColor]];
+                                                                          withColorStringForRegion:@"greenColor"];
             [self drawOverlaysWithGeoRegionStack:stateRegionStack onMapView:self.mapView];
         }
         else if (control.selectedSegmentIndex == 2)
         {
-            GeoRegionStack *nationalParkRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area" withFieldName:@"Name" withColorForRegion:[UIColor grayColor]];
+            GeoRegionStack *nationalParkRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area" withFieldName:@"Name" withColorStringForRegion:@"grayColor"];
             [self drawOverlaysWithGeoRegionStack:nationalParkRegionStack onMapView:self.mapView];
         }
     }

@@ -12,6 +12,6 @@
 
 @property (readonly, nonatomic) NSArray *geoRegions; //Array of GeoRegion Objects
 
--(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color;
+-(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorStringForRegion:(NSString *)color;
 
 @end

@@ -14,7 +14,7 @@
 
 @implementation GeoRegionStack
 
--(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color
+-(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorStringForRegion:(NSString *)color
 {
     self = [super init];
     if (self)
@@ -39,7 +39,7 @@
                 GeoRegion *geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
                                                                 databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
                                                                        fieldName:fieldName
-                                                                           color:color];
+                                                                           colorString:color];
                 [mutableGeoRegions addObject:geoRegion];
                 }
                 self.geoRegions = [NSArray arrayWithArray:mutableGeoRegions];
