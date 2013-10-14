@@ -39,7 +39,7 @@
 		444A3942180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 444A393F180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf */; };
 		444A3943180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp in Resources */ = {isa = PBXBuildFile; fileRef = 444A3940180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp */; };
 		444A3944180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx in Resources */ = {isa = PBXBuildFile; fileRef = 444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */; };
-		444A3947180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 444A3946180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m */; };
+		44E300D2180C4AC3002AA7DD /* ViewController+MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E300D1180C4AC3002AA7DD /* ViewController+MapOverlay.m */; };
 		489053261CF94F1BB015B19E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A73226E8C34B209824B69D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -94,8 +94,8 @@
 		444A393F180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_10m_parks_and_protected_lands_area.dbf; sourceTree = "<group>"; };
 		444A3940180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_10m_parks_and_protected_lands_area.shp; sourceTree = "<group>"; };
 		444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_10m_parks_and_protected_lands_area.shx; sourceTree = "<group>"; };
-		444A3945180B57E9006A6A13 /* UIViewController+MapOverlayCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MapOverlayCategory.h"; sourceTree = "<group>"; };
-		444A3946180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MapOverlayCategory.m"; sourceTree = "<group>"; };
+		44E300D0180C4AC3002AA7DD /* ViewController+MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MapOverlay.h"; sourceTree = "<group>"; };
+		44E300D1180C4AC3002AA7DD /* ViewController+MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MapOverlay.m"; sourceTree = "<group>"; };
 		97A73226E8C34B209824B69D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,8 +227,8 @@
 			children = (
 				444A38EF180AFDC6006A6A13 /* ViewController.h */,
 				444A38F0180AFDC6006A6A13 /* ViewController.m */,
-				444A3945180B57E9006A6A13 /* UIViewController+MapOverlayCategory.h */,
-				444A3946180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m */,
+				44E300D0180C4AC3002AA7DD /* ViewController+MapOverlay.h */,
+				44E300D1180C4AC3002AA7DD /* ViewController+MapOverlay.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +252,7 @@
 				444A3921180B23F8006A6A13 /* countries.txt */,
 			);
 			name = Countries;
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		444A3926180B2436006A6A13 /* States */ = {
@@ -266,6 +267,7 @@
 				444A392D180B2443006A6A13 /* states.prj */,
 			);
 			name = States;
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		444A3935180B52B6006A6A13 /* National Parks and Protected Lands  */ = {
@@ -276,6 +278,7 @@
 				444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */,
 			);
 			name = "National Parks and Protected Lands ";
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,11 +428,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				444A3947180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m in Sources */,
 				444A391B180B179F006A6A13 /* GeoRegionStack.m in Sources */,
 				444A38F1180AFDC6006A6A13 /* ViewController.m in Sources */,
 				444A3916180B0254006A6A13 /* GeoRegion.m in Sources */,
 				444A38EB180AFDC6006A6A13 /* AppDelegate.m in Sources */,
+				44E300D2180C4AC3002AA7DD /* ViewController+MapOverlay.m in Sources */,
 				444A38E7180AFDC6006A6A13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

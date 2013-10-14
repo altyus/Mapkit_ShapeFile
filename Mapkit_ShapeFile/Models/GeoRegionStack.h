@@ -11,7 +11,8 @@
 @interface GeoRegionStack : NSObject
 
 @property (readonly, nonatomic) NSArray *geoRegions; //Array of GeoRegion Objects
+@property (nonatomic)BOOL randomColor;
 
--(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color;
+-(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color randomRegionColor:(BOOL)random;
 
 @end

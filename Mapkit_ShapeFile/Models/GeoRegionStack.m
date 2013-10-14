@@ -14,11 +14,12 @@
 
 @implementation GeoRegionStack
 
--(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color
+-(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color randomRegionColor:(BOOL)random
 {
     self = [super init];
     if (self)
     {
+        _randomColor = random;
         //open Database
         NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
         //NSString *shpPath = [resourcePath stringByAppendingPathComponent:@"states"];
@@ -30,29 +31,44 @@
         SHPGetInfo(shp, &numEntities, &shapeType, NULL, NULL);
         
         //Iterate through each GeoRegion in database
-        if (color)
-        {
+        
             NSMutableArray *mutableGeoRegions = [[NSMutableArray alloc] init];
-            for (int i=0; i<numEntities; i++)
+        
+        for (int i=0; i<numEntities; i++)
+        {
+            SHPObject *shpObject = SHPReadObject(shp, i);
+            GeoRegion *geoRegion = nil;
+            
+            if (_randomColor)
             {
-                SHPObject *shpObject = SHPReadObject(shp, i);
-                GeoRegion *geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
+                geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
                                                                 databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
                                                                        fieldName:fieldName
-                                                                           color:color];
-                [mutableGeoRegions addObject:geoRegion];
-                }
-                self.geoRegions = [NSArray arrayWithArray:mutableGeoRegions];
+                                                                           color:[self generateRandColor]];
             }
-        else
-        {
-            NSLog(@"Can't initialize Shapes without Color");
+            else if (!random)
+            {
+                geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
+                                                 databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
+                                                        fieldName:fieldName
+                                                            color:color];
+            }
+            [mutableGeoRegions addObject:geoRegion];
         }
         
-        
+        self.geoRegions = [NSArray arrayWithArray:mutableGeoRegions];
         SHPClose(shp);
     }
     return self;
 }
 
+#define ALPHAVALUE  1.0f
+- (UIColor *)generateRandColor
+{
+    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+    UIColor *randomColor = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:ALPHAVALUE];
+    return randomColor;
+}
 @end

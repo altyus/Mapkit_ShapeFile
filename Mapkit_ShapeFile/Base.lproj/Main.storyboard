@@ -42,11 +42,20 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bEi-Iu-rfM"/>
                                 </items>
                             </toolbar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvo-hJ-dl2">
+                                <rect key="frame" x="136" y="457" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="randomColorValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="RDl-PI-0gh"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="XIX-mh-xS4" id="YI1-p6-Xcx"/>
+                        <outlet property="randomSwitch" destination="Bvo-hJ-dl2" id="y7f-JD-QwV"/>
+                        <outlet property="regionSegmentedControl" destination="lsl-hX-Clx" id="oJj-b9-ZTH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
