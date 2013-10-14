@@ -36,6 +36,10 @@
 		444A3932180B2443006A6A13 /* states.shp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 444A392B180B2443006A6A13 /* states.shp.xml */; };
 		444A3933180B2443006A6A13 /* states.shx in Resources */ = {isa = PBXBuildFile; fileRef = 444A392C180B2443006A6A13 /* states.shx */; };
 		444A3934180B2443006A6A13 /* states.prj in Resources */ = {isa = PBXBuildFile; fileRef = 444A392D180B2443006A6A13 /* states.prj */; };
+		444A3942180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 444A393F180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf */; };
+		444A3943180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp in Resources */ = {isa = PBXBuildFile; fileRef = 444A3940180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp */; };
+		444A3944180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx in Resources */ = {isa = PBXBuildFile; fileRef = 444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */; };
+		444A3947180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 444A3946180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m */; };
 		489053261CF94F1BB015B19E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A73226E8C34B209824B69D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +91,11 @@
 		444A392B180B2443006A6A13 /* states.shp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = states.shp.xml; sourceTree = "<group>"; };
 		444A392C180B2443006A6A13 /* states.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = states.shx; sourceTree = "<group>"; };
 		444A392D180B2443006A6A13 /* states.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.prj; sourceTree = "<group>"; };
+		444A393F180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_10m_parks_and_protected_lands_area.dbf; sourceTree = "<group>"; };
+		444A3940180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_10m_parks_and_protected_lands_area.shp; sourceTree = "<group>"; };
+		444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_10m_parks_and_protected_lands_area.shx; sourceTree = "<group>"; };
+		444A3945180B57E9006A6A13 /* UIViewController+MapOverlayCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MapOverlayCategory.h"; sourceTree = "<group>"; };
+		444A3946180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MapOverlayCategory.m"; sourceTree = "<group>"; };
 		97A73226E8C34B209824B69D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,6 +227,8 @@
 			children = (
 				444A38EF180AFDC6006A6A13 /* ViewController.h */,
 				444A38F0180AFDC6006A6A13 /* ViewController.m */,
+				444A3945180B57E9006A6A13 /* UIViewController+MapOverlayCategory.h */,
+				444A3946180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 		444A391C180B23C5006A6A13 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				444A3935180B52B6006A6A13 /* National Parks and Protected Lands  */,
 				444A3926180B2436006A6A13 /* States */,
 				444A391D180B23EE006A6A13 /* Countries */,
 			);
@@ -254,6 +266,16 @@
 				444A392D180B2443006A6A13 /* states.prj */,
 			);
 			name = States;
+			sourceTree = "<group>";
+		};
+		444A3935180B52B6006A6A13 /* National Parks and Protected Lands  */ = {
+			isa = PBXGroup;
+			children = (
+				444A393F180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf */,
+				444A3940180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp */,
+				444A3941180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx */,
+			);
+			name = "National Parks and Protected Lands ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444A3944180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shx in Resources */,
 				444A38F3180AFDC6006A6A13 /* Images.xcassets in Resources */,
 				444A3933180B2443006A6A13 /* states.shx in Resources */,
 				444A3923180B23F8006A6A13 /* countries.dbf in Resources */,
@@ -341,7 +364,9 @@
 				444A3930180B2443006A6A13 /* states.sbx in Resources */,
 				444A3922180B23F8006A6A13 /* countries.shp in Resources */,
 				444A3910180B006F006A6A13 /* Podfile in Resources */,
+				444A3942180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.dbf in Resources */,
 				444A392E180B2443006A6A13 /* states.dbf in Resources */,
+				444A3943180B55B2006A6A13 /* ne_10m_parks_and_protected_lands_area.shp in Resources */,
 				444A3931180B2443006A6A13 /* states.shp in Resources */,
 				444A3924180B23F8006A6A13 /* countries.shx in Resources */,
 				444A3932180B2443006A6A13 /* states.shp.xml in Resources */,
@@ -400,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444A3947180B57E9006A6A13 /* UIViewController+MapOverlayCategory.m in Sources */,
 				444A391B180B179F006A6A13 /* GeoRegionStack.m in Sources */,
 				444A38F1180AFDC6006A6A13 /* ViewController.m in Sources */,
 				444A3916180B0254006A6A13 /* GeoRegion.m in Sources */,

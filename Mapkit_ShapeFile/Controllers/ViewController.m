@@ -7,36 +7,38 @@
 //
 
 #import "ViewController.h"
-
+#import "UIViewController+MapOverlayCategory.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) GeoRegionStack *regionStack;
 
 @end
 
 @implementation ViewController
 
+#pragma mark - LifeCycle Methods
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self.mapView setMapType:MKMapTypeSatellite];
     self.mapView.delegate = self;
-    GeoRegionStack *stateRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"states"
-                                                                  withFieldName:@"STATE_NAME"
-                                                             withColorForRegion:[UIColor greenColor]];
+    [self.mapView setMapType:MKMapTypeSatellite];
     
-    NSLog(@"%@",[stateRegionStack.geoRegions[23] name]);
     
-    self.regionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
-                                                                         withFieldName:@"CNTRY_NAME"
-                                                                    withColorForRegion:[UIColor orangeColor]];
-    NSLog(@"%@",[self.regionStack.geoRegions[0] name]);
     
-    [self drawOverlaysWithGeoRegionStack:self.regionStack];
+    //NSLog(@"%@",[stateRegionStack.geoRegions[23] name]);
+    
+    
+    
+    
+    
+    //GeoRegionStack *nationalParkRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area" withFieldName:@"Name" withColorForRegion:[UIColor grayColor]];
+    
+    
+    //[self drawOverlaysWithGeoRegionStack:nationalParkRegionStack onMapView:self.mapView];
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -45,58 +47,31 @@
 }
 
 
--(void)drawOverlaysWithGeoRegionStack:(GeoRegionStack *)stack
-{
-    //int numRegions = [stack.geoRegions count];
-    
-    for (GeoRegion *region in stack.geoRegions)
+- (IBAction)overlayTypeValueChanged:(id)sender {
+    if ([sender isKindOfClass:[UISegmentedControl class]])
     {
-        for (Polygon *polygon in region.polygons)
+        UISegmentedControl *control = (UISegmentedControl *)sender;
+        if (control.selectedSegmentIndex == 0)
         {
-            int count = [polygon.coordinates count];
-            CLLocationCoordinate2D coords[count];
-            
-            for (int c=0; c<count; c++)
-            {
-                NSValue *coordValue = polygon.coordinates[c];
-                CLLocationCoordinate2D coord = [coordValue MKCoordinateValue];
-                coords[c] = coord;
-            }
-            MKPolygon *polygon = [MKPolygon polygonWithCoordinates:coords count:count];
-            polygon.title = region.name;
-            [self.mapView addOverlay:polygon];
+            [self.mapView removeOverlays:[self.mapView overlays]];
+            NSLog(@"Index = 0");
+            GeoRegionStack *countryRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
+                                                                                 withFieldName:@"CNTRY_NAME"
+                                                                            withColorForRegion:[UIColor purpleColor]];
+            [self drawOverlaysWithGeoRegionStack:countryRegionStack onMapView:self.mapView];
+        }
+        else if (control.selectedSegmentIndex ==1)
+        {
+            [self.mapView removeOverlays:[self.mapView overlays]];
+            NSLog(@"Index = 1");
+            GeoRegionStack *stateRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"states"
+                                                                               withFieldName:@"STATE_NAME"
+                                                                          withColorForRegion:[UIColor greenColor]];
+            [self drawOverlaysWithGeoRegionStack:stateRegionStack onMapView:self.mapView];
         }
     }
-    
-    
 }
 
-#pragma mark - MapViewDelegate
-
-//Deprecated in iOS 7 implementing renderer for overlay instead
-//-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
-//{
-//    
-//}
-
--(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
-    MKPolygonRenderer *renderer = [[MKPolygonRenderer alloc] initWithPolygon:overlay];
-    
-    if ([overlay isKindOfClass:[MKPolygon class]])
-    {
-        for (GeoRegion *region in self.regionStack.geoRegions)
-        {
-            renderer.fillColor = region.color;
-            renderer.strokeColor = [UIColor blackColor];
-            renderer.lineWidth = 1;
-            renderer.lineCap = kCGLineCapRound;
-        }
-        return renderer;
-    }
-    else return nil;
-    
-}
 
 
 

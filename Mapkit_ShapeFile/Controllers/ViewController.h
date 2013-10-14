@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GeoRegionStack.h"
-#import "GeoRegion.h"
 #import <MapKit/MapKit.h>
+#import "UIViewController+MapOverlayCategory.h"
 
 @interface ViewController : UIViewController <MKMapViewDelegate>
 
