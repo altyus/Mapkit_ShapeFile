@@ -14,6 +14,7 @@
 @implementation ViewController
 
 #pragma mark - LifeCycle Methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,8 +29,11 @@
                                                                          withFieldName:@"CNTRY_NAME"
                                                                     withColorForRegion:nil
                                                                      randomRegionColor:YES];
-    [self drawOverlaysWithGeoRegionStack:countryRegionStack onMapView:self.mapView];
+    [self drawOverlaysWithGeoRegionStack:countryRegionStack
+                               onMapView:self.mapView];
 }
+
+#pragma mark - IBActions
 
 //Change overlay with segmented control index
 - (IBAction)overlayTypeValueChanged:(id)sender {
@@ -43,6 +47,7 @@
     [self updateUI];
 }
 
+#pragma mark - UI
 
 -(void)updateUI
 {
@@ -56,6 +61,8 @@
     
     //remove existing overlays
     [self.mapView removeOverlays:[self.mapView overlays]];
+    
+    //Draw Overlays here 
     if (self.regionSegmentedControl.selectedSegmentIndex == 0)
     {
         GeoRegionStack *countryRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"

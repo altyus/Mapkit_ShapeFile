@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISwitch *randomSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *regionSegmentedControl;
-
-
 @property (strong, nonatomic) NSMutableDictionary *geoRegionDict;
 
 @end

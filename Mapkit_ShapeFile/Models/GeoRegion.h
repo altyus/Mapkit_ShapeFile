@@ -21,7 +21,10 @@
 @property (nonatomic, assign) double minLong;
 @property (nonatomic, assign) double maxLong;
 
--(id)initWithShapeObject:(SHPObject *)shape databaseFilePath:(NSString *)dbfPath fieldName:(NSString *)fieldName color:(UIColor *)color;
+-(id)initWithShapeObject:(SHPObject *)shape
+        databaseFilePath:(NSString *)dbfPath
+               fieldName:(NSString *)fieldName
+                   color:(UIColor *)color;
 
 @end
 

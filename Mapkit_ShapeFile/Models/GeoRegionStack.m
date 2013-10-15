@@ -14,7 +14,10 @@
 
 @implementation GeoRegionStack
 
--(id)initWithPathComponent:(NSString *)pathComponent withFieldName:(NSString *)fieldName withColorForRegion:(UIColor *)color randomRegionColor:(BOOL)random
+-(id)initWithPathComponent:(NSString *)pathComponent
+             withFieldName:(NSString *)fieldName
+        withColorForRegion:(UIColor *)color
+         randomRegionColor:(BOOL)random
 {
     self = [super init];
     if (self)
@@ -22,7 +25,6 @@
         _randomColor = random;
         //open Database
         NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-        //NSString *shpPath = [resourcePath stringByAppendingPathComponent:@"states"];
         NSString *shpPath = [resourcePath stringByAppendingPathComponent:pathComponent];
         const char * pszPath = [shpPath cStringUsingEncoding:NSUTF8StringEncoding];
         SHPHandle shp = SHPOpen(pszPath, "rb");
@@ -32,7 +34,7 @@
         
         //Iterate through each GeoRegion in database
         
-            NSMutableArray *mutableGeoRegions = [[NSMutableArray alloc] init];
+        NSMutableArray *mutableGeoRegions = [[NSMutableArray alloc] init];
         
         for (int i=0; i<numEntities; i++)
         {
@@ -42,9 +44,9 @@
             if (_randomColor)
             {
                 geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
-                                                                databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
-                                                                       fieldName:fieldName
-                                                                           color:[self generateRandColor]];
+                                                 databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
+                                                        fieldName:fieldName
+                                                            color:[self generateRandColor]];
             }
             else if (!random)
             {
