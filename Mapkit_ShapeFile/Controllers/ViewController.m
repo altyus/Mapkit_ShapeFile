@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+
 @end
 
 @implementation ViewController
@@ -62,7 +63,7 @@
     //remove existing overlays
     [self.mapView removeOverlays:[self.mapView overlays]];
     
-    //Draw Overlays here 
+    //Draw Overlays here
     if (self.regionSegmentedControl.selectedSegmentIndex == 0)
     {
         GeoRegionStack *countryRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
@@ -81,10 +82,12 @@
     }
     else if (self.regionSegmentedControl.selectedSegmentIndex == 2)
     {
-        GeoRegionStack *nationalParkRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area" withFieldName:@"Name" withColorForRegion:[UIColor grayColor]
+        GeoRegionStack *nationalParkRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area"
+                                                                                  withFieldName:@"Name"
+                                                                             withColorForRegion:[UIColor grayColor]
                                                                               randomRegionColor:random];
         [self drawOverlaysWithGeoRegionStack:nationalParkRegionStack onMapView:self.mapView];
     }
-
+    
 }
 @end

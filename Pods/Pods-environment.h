@@ -6,6 +6,42 @@
 // project.
 
 
+// MMDrawerController
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController 0
+
+// MMDrawerController/Core
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_Core
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_Core 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_Core 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_Core 0
+
+// MMDrawerController/MMDrawerBarButtonItem
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_MMDrawerBarButtonItem
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_MMDrawerBarButtonItem 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_MMDrawerBarButtonItem 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_MMDrawerBarButtonItem 0
+
+// MMDrawerController/MMDrawerVisualStates
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_MMDrawerVisualStates
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_MMDrawerVisualStates 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_MMDrawerVisualStates 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_MMDrawerVisualStates 0
+
+// MMDrawerController/Subclass
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_Subclass
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_Subclass 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_Subclass 4
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_Subclass 0
+
+// MMDrawerController+Storyboard
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_Storyboard
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_Storyboard 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_Storyboard 0
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_Storyboard 1
+
 // shapelib
 #define COCOAPODS_POD_AVAILABLE_shapelib
 #define COCOAPODS_VERSION_MAJOR_shapelib 1

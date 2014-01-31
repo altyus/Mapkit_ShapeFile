@@ -48,7 +48,7 @@
         {
             renderer.fillColor = myRegion.color;
             renderer.strokeColor = [UIColor blackColor];
-            renderer.lineWidth = 1;
+            renderer.lineWidth = 1.0;
             renderer.lineCap = kCGLineCapRound;
         }
         

@@ -8,60 +8,82 @@
 
 #import "GeoRegionStack.h"
 #import "GeoRegion.h"
+
 @interface GeoRegionStack()
+
 @property (strong, nonatomic) NSMutableArray *geoRegions;
+
 @end
 
 @implementation GeoRegionStack
 
--(id)initWithPathComponent:(NSString *)pathComponent
-             withFieldName:(NSString *)fieldName
-        withColorForRegion:(UIColor *)color
-         randomRegionColor:(BOOL)random
+- (id)init
+{
+    return [self initWithPathComponent:@""
+                         withFieldName:@""
+                    withColorForRegion:[UIColor whiteColor]
+                     randomRegionColor:NO];
+}
+
+- (instancetype)initWithPathComponent:(NSString *)pathComponent
+                        withFieldName:(NSString *)fieldName
+                   withColorForRegion:(UIColor *)color
+                    randomRegionColor:(BOOL)random
 {
     self = [super init];
     if (self)
     {
-        _randomColor = random;
-        //open Database
-        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-        NSString *shpPath = [resourcePath stringByAppendingPathComponent:pathComponent];
-        const char * pszPath = [shpPath cStringUsingEncoding:NSUTF8StringEncoding];
-        SHPHandle shp = SHPOpen(pszPath, "rb");
-        int numEntities;
-        int shapeType;
-        SHPGetInfo(shp, &numEntities, &shapeType, NULL, NULL);
-        
-        //Iterate through each GeoRegion in database
-        
-        NSMutableArray *mutableGeoRegions = [[NSMutableArray alloc] init];
-        
-        for (int i=0; i<numEntities; i++)
-        {
-            SHPObject *shpObject = SHPReadObject(shp, i);
-            GeoRegion *geoRegion = nil;
-            
-            if (_randomColor)
-            {
-                geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
-                                                 databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
-                                                        fieldName:fieldName
-                                                            color:[self generateRandColor]];
-            }
-            else if (!random)
-            {
-                geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
-                                                 databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
-                                                        fieldName:fieldName
-                                                            color:color];
-            }
-            [mutableGeoRegions addObject:geoRegion];
-        }
-        
-        self.geoRegions = [NSArray arrayWithArray:mutableGeoRegions];
-        SHPClose(shp);
+        [self setupGeoRegionStackWithPathComponent:(NSString *)pathComponent
+                                     withFieldName:(NSString *)fieldName
+                                withColorForRegion:(UIColor *)color
+                                 randomRegionColor:(BOOL)random];
     }
     return self;
+}
+
+- (void)setupGeoRegionStackWithPathComponent:(NSString *)pathComponent
+                               withFieldName:(NSString *)fieldName
+                          withColorForRegion:(UIColor *)color
+                           randomRegionColor:(BOOL)random
+{
+    _randomColor = random;
+    //open Database
+    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString *shpPath = [resourcePath stringByAppendingPathComponent:pathComponent];
+    const char * pszPath = [shpPath cStringUsingEncoding:NSUTF8StringEncoding];
+    SHPHandle shp = SHPOpen(pszPath, "rb");
+    int numEntities;
+    int shapeType;
+    SHPGetInfo(shp, &numEntities, &shapeType, NULL, NULL);
+    
+    //Iterate through each GeoRegion in database
+    
+    NSMutableArray *mutableGeoRegions = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i<numEntities; i++)
+    {
+        SHPObject *shpObject = SHPReadObject(shp, i);
+        GeoRegion *geoRegion = nil;
+        
+        if (_randomColor)
+        {
+            geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
+                                             databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
+                                                    fieldName:fieldName
+                                                        color:[self generateRandColor]];
+        }
+        else if (!random)
+        {
+            geoRegion =[[GeoRegion alloc] initWithShapeObject:shpObject
+                                             databaseFilePath:[NSString stringWithFormat:@"%@.dbf",pathComponent]
+                                                    fieldName:fieldName
+                                                        color:color];
+        }
+        [mutableGeoRegions addObject:geoRegion];
+    }
+    
+    _geoRegions = [NSArray arrayWithArray:mutableGeoRegions];
+    SHPClose(shp);
 }
 
 #define ALPHAVALUE  1.0f

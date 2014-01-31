@@ -74,7 +74,7 @@
 		444A3901180AFDC6006A6A13 /* Mapkit_ShapeFileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mapkit_ShapeFileTests-Info.plist"; sourceTree = "<group>"; };
 		444A3903180AFDC6006A6A13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		444A3905180AFDC6006A6A13 /* Mapkit_ShapeFileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mapkit_ShapeFileTests.m; sourceTree = "<group>"; };
-		444A390F180B006F006A6A13 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		444A390F180B006F006A6A13 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		444A3914180B0254006A6A13 /* GeoRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoRegion.h; sourceTree = "<group>"; };
 		444A3915180B0254006A6A13 /* GeoRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoRegion.m; sourceTree = "<group>"; };
 		444A3917180B02F0006A6A13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };

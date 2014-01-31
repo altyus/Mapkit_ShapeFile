@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "MMDrawerController+Storyboard.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    MMDrawerController *drawerController = (MMDrawerController *)self.window.rootViewController;
+    
+    [drawerController setMaximumLeftDrawerWidth:200];
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    
     return YES;
 }
 							
