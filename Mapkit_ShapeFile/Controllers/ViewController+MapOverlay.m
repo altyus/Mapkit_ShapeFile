@@ -19,10 +19,10 @@
     {
         for (Polygon *polygon in region.polygons)
         {
-            int count = [polygon.coordinates count];
+            NSInteger count = [polygon.coordinates count];
             CLLocationCoordinate2D coords[count];
             
-            for (int c=0; c<count; c++)
+            for (NSInteger c = 0; c < count; c++)
             {
                 NSValue *coordValue = polygon.coordinates[c];
                 CLLocationCoordinate2D coord = [coordValue MKCoordinateValue];
@@ -38,7 +38,8 @@
 
 #pragma mark - MapViewDelegate
 
--(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView
+           rendererForOverlay:(id<MKOverlay>)overlay
 {
     MKPolygonRenderer *renderer = [[MKPolygonRenderer alloc] initWithPolygon:overlay];
     if ([overlay isKindOfClass:[MKPolygon class]])
