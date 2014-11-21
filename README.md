@@ -2,8 +2,8 @@ Mapkit_ShapeFile
 ================
 
 <p align="center" >
-  <img src="assets/images/country.png" alt="Country" title="Country">
-  
+  <img src="assets/images/country.png" alt="Country" title="Country" width="50">
+
   <img src="assets/images/state.png" alt="State" title="State">
 
   <img src="assets/images/statepark.png" alt="State Park" title="State Park">
