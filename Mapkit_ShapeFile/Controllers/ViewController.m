@@ -10,6 +10,11 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UISwitch *randomSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *regionSegmentedControl;
+
+
 @end
 
 @implementation ViewController
@@ -19,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     
     //set mapView Delegate and Map Type
     self.mapView.delegate = self;
@@ -64,30 +69,40 @@
     [self.mapView removeOverlays:[self.mapView overlays]];
     
     //Draw Overlays here
-    if (self.regionSegmentedControl.selectedSegmentIndex == 0)
-    {
-        GeoRegionStack *countryRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
-                                                                             withFieldName:@"CNTRY_NAME"
-                                                                        withColorForRegion:[UIColor purpleColor]
-                                                                         randomRegionColor:random];
-        [self drawOverlaysWithGeoRegionStack:countryRegionStack onMapView:self.mapView];
-    }
-    else if (self.regionSegmentedControl.selectedSegmentIndex == 1)
-    {
-        GeoRegionStack *stateRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"states"
-                                                                           withFieldName:@"STATE_NAME"
-                                                                      withColorForRegion:[UIColor greenColor]
-                                                                       randomRegionColor:random];
-        [self drawOverlaysWithGeoRegionStack:stateRegionStack onMapView:self.mapView];
-    }
-    else if (self.regionSegmentedControl.selectedSegmentIndex == 2)
-    {
-        GeoRegionStack *nationalParkRegionStack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area"
-                                                                                  withFieldName:@"Name"
-                                                                             withColorForRegion:[UIColor grayColor]
-                                                                              randomRegionColor:random];
-        [self drawOverlaysWithGeoRegionStack:nationalParkRegionStack onMapView:self.mapView];
+    
+    GeoRegionStack *stack;
+    
+    switch (self.regionSegmentedControl.selectedSegmentIndex) {
+        case 0:
+        {
+            stack = [[GeoRegionStack alloc] initWithPathComponent:@"countries"
+                                                    withFieldName:@"CNTRY_NAME"
+                                               withColorForRegion:[UIColor purpleColor]
+                                                randomRegionColor:random];
+        }
+        break;
+        case 1:
+        {
+            stack = [[GeoRegionStack alloc] initWithPathComponent:@"states"
+                                                    withFieldName:@"STATE_NAME"
+                                               withColorForRegion:[UIColor greenColor]
+                                                randomRegionColor:random];
+        }
+        break;
+        case 2:
+        {
+            stack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area"
+                                                    withFieldName:@"Name"
+                                               withColorForRegion:[UIColor grayColor]
+                                                randomRegionColor:random];
+        }
+        default:
+        stack = nil;
+        break;
     }
     
+    [self drawOverlaysWithGeoRegionStack:stack onMapView:self.mapView];
+    
 }
+
 @end
