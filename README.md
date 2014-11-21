@@ -2,11 +2,11 @@ Mapkit_ShapeFile
 ================
 
 <p align="center" >
-  <img src="assets/images/country.png" alt="Country" title="Country" width="150">
+  <img src="assets/images/country.png" alt="Country" title="Country" width="200">
 
-  <img src="assets/images/state.png" alt="State" title="State" width="150">
+  <img src="assets/images/state.png" alt="State" title="State" width="200">
 
-  <img src="assets/images/statepark.png" alt="State Park" title="State Park" width="150">
+  <img src="assets/images/statepark.png" alt="State Park" title="State Park" width="200">
 </p>
 
 ##Overview 
