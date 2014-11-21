@@ -2,13 +2,13 @@ Mapkit_ShapeFile
 ================
 
 <p align="center" >
-  <img src="https://raw.github.com/altyus/Mapkit_ShapeFile/assets/images/country.png" alt="Country" title="Country">
+  <img src="assets/images/country.png" alt="Country" title="Country">
 </p>
 <p align="center" >
   <img src="assets/images/state.png" alt="State" title="State">
 </p>
 <p align="center" >
-  <img src="https://raw.github.com/altyus/Mapkit_ShapeFile/assets/images/statepark.png" alt="State Park" title="State Park">
+  <img src="assets/images/statepark.png" alt="State Park" title="State Park">
 </p>
 
 ##Overview 
