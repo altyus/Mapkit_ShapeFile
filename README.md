@@ -1,6 +1,11 @@
 Mapkit_ShapeFile
 ================
 
+<p align="center" > 
+
+	<img src="assets/images/mapkitshapefile.gif" alt="Mapkit_shapeFile_demo" title="Demo" width="200">
+</p> 
+
 <p align="center" >
   <img src="assets/images/country.png" alt="Country" title="Country" width="200">
 
