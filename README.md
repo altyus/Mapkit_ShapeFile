@@ -6,14 +6,6 @@ Mapkit_ShapeFile
 	<img src="assets/images/mapkitshapefile.gif" alt="Mapkit_shapeFile_demo" title="Demo" width="200">
 </p> 
 
-<p align="center" >
-  <img src="assets/images/country.png" alt="Country" title="Country" width="200">
-
-  <img src="assets/images/state.png" alt="State" title="State" width="200">
-
-  <img src="assets/images/statepark.png" alt="State Park" title="State Park" width="200">
-</p>
-
 ##Overview 
 
 Uses ESRI Shape Files to draw Overlays on MKMapViews 
