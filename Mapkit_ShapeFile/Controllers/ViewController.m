@@ -80,7 +80,7 @@
                                                withColorForRegion:[UIColor purpleColor]
                                                 randomRegionColor:random];
         }
-        break;
+            break;
         case 1:
         {
             stack = [[GeoRegionStack alloc] initWithPathComponent:@"states"
@@ -88,7 +88,7 @@
                                                withColorForRegion:[UIColor greenColor]
                                                 randomRegionColor:random];
         }
-        break;
+            break;
         case 2:
         {
             stack = [[GeoRegionStack alloc] initWithPathComponent:@"ne_10m_parks_and_protected_lands_area"
@@ -96,9 +96,10 @@
                                                withColorForRegion:[UIColor grayColor]
                                                 randomRegionColor:random];
         }
+            break;
         default:
-        stack = nil;
-        break;
+            stack = nil;
+            break;
     }
     
     [self drawOverlaysWithGeoRegionStack:stack onMapView:self.mapView];
